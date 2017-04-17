@@ -32,7 +32,7 @@ What is mean total number of steps taken per day?
 hist(tapply(activity$steps, activity$date, sum, na.rm = FALSE), main = "Number of steps by day",xlab = "Number of steps")
 ```
 
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-3-1.png)
+![plot of graph1](/figure/graph1.png)
 
 1.  Calculate and report the mean and median total number of steps taken per day
 
@@ -64,7 +64,7 @@ weekAverage <- aggregate(steps ~ interval, data = activity,FUN = "mean")
 plot(weekAverage$interval, weekAverage$steps, type = "l", xlab = "Intervalo",ylab = "Number of steps",main = "Average Daily Activity Pattern")
 ```
 
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-5-1.png)
+![plot of graph2](/figure/graph2.png)
 
 1.  Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -122,7 +122,7 @@ summary(activity)
 hist(tapply(activity$steps,activity$date,sum,na.rm=FALSE),main="Distribution of number of steps taken each day", xlab="Number of steps")
 ```
 
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-10-1.png)
+![plot of graph3](/figure/graph3.png)
 
 ``` r
 #New mean and median values
@@ -147,6 +147,6 @@ new_weekAverage <- aggregate(steps ~ interval + weekday, data = activity, FUN= "
 xyplot(new_weekAverage$steps ~ new_weekAverage$interval | new_weekAverage$weekday, type="l", layout=c(1,2), xlab="Interval", ylab="Number of Steps")
 ```
 
-![](PA1_template_files/figure-markdown_github/unnamed-chunk-11-1.png)
+![plot of graph4](/figure/graph4.png)
 
 We can see that in weekends people walks more than in the weekdays. But in the weekdays we can see a peak in the interval between 800 to 950 and people starts to walk earlier than during the weekend.
